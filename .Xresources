@@ -1,0 +1,5 @@
+#URxvt.depth: 32
+#URxvt*background: rgba:0000/0000/0000/ffff
+
+URxvt.saveLines:32767
+URxvt.scrollBar: false

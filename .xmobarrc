@@ -1,0 +1,22 @@
+Config {
+	font = "xft:Monace:size=10:antialias=true" 
+    , bgColor = "black"
+    , fgColor = "grey"
+	, position = Top 
+    , lowerOnStart = True
+    , commands =
+        [
+          Run Com "uname" ["-s","-r"] "" 36000 -- 1h
+        , Run Uptime ["-t","Uptime: <days>d <hours>h <minutes>m <seconds>s"] 10 -- 1s
+        , Run Memory ["-t","Mem: <usedratio>%"] 10 -- 1s
+        , Run Cpu ["-L","3","-H","75","--high","red"] 10 -- 1s
+        , Run Network "wlan0" ["-t","Network: <rx> kB/s | <tx> kB/s"] 10 -- 1s
+        , Run Weather "EGLC" ["-t","<tempC>C, <skyCondition> (London City Airport)"] 6000 -- 10m
+        , Run Date "%d/%m/%y, %H:%M:%S" "date" 10 -- 1s
+        ]
+    , sepChar = "%"
+    , alignSep = "}{"
+    , template = "%uname% (Arch Linux) %uptime% %memory% %cpu% %wlan0% }{ %EGLC% %date%"
+    , border = FullBM(0)
+    , borderColor = "black"
+}
