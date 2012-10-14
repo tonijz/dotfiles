@@ -1,5 +1,5 @@
 colorscheme zenburn
-"set guifont=Monaco:h10
+set guifont=Monaco\ 10
 
 syntax on
 set nowrap                    " set nowrap
@@ -14,6 +14,7 @@ set showcmd
 set nocompatible              " vim, not vi
 set autoindent smartindent    " auto/smart indent
 set smarttab                  " tab and backspace are smart
+set guioptions-=T             "remove toolbar
 
 " Set tabs at 4 spaces
 set tabstop=4

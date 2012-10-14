@@ -1,5 +1,25 @@
-#URxvt.depth: 32
-#URxvt*background: rgba:0000/0000/0000/ffff
+Xft.dpi: 96
+Xft.lcdfilter: lcddefault
+Xft.antialias: true
+Xft.hinting:true
+Xft.hintstyle: hintfull
+Xft.rgba: rgb
+*customization: -color
 
-URxvt.saveLines:32767
+
+! -- Fonts -- !
+URxvt*font: xft:Ubuntu Mono:pixelsize=14,style=regular 
+URxvt*boldFont: xft:Ubuntu Mono:pixelsize=14,style=regular
+
+!URxvt.font:xft:droid sans mono slashed:medium:pixelsize=11
+!URxvt.boldFont:xft:droid sans mono slashed:medium:pixelsize=11
+
+URxvt.depth: 32
+URxvt*background: rgba:0000/0000/0000/dddd
+
+URxvt*foreground: Grey
+
+URxvt.saveLines: 32767
 URxvt.scrollBar: false
+
+

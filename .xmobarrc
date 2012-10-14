@@ -1,5 +1,5 @@
 Config {
-	font = "xft:Monace:size=10:antialias=true" 
+	font = "xft:Ubuntu Mono:pixelsize=14,style=regular" 
     , bgColor = "black"
     , fgColor = "grey"
 	, position = Top 
@@ -9,6 +9,7 @@ Config {
           Run Com "uname" ["-s","-r"] "" 36000 -- 1h
         , Run Uptime ["-t","Uptime: <days>d <hours>h <minutes>m <seconds>s"] 10 -- 1s
         , Run Memory ["-t","Mem: <usedratio>%"] 10 -- 1s
+		, Run Battery ["Bat1"] 600
         , Run Cpu ["-L","3","-H","75","--high","red"] 10 -- 1s
         , Run Network "wlan0" ["-t","Network: <rx> kB/s | <tx> kB/s"] 10 -- 1s
         , Run Weather "EGLC" ["-t","<tempC>C, <skyCondition> (London City Airport)"] 6000 -- 10m
@@ -16,7 +17,7 @@ Config {
         ]
     , sepChar = "%"
     , alignSep = "}{"
-    , template = "%uname% (Arch Linux) %uptime% %memory% %cpu% %wlan0% }{ %EGLC% %date%"
+    , template = "%uname% %uptime% %memory% %cpu% %wlan0% %battery% }{ %EGLC% %date%"
     , border = FullBM(0)
     , borderColor = "black"
 }

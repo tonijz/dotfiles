@@ -12,7 +12,7 @@ import XMonad.Layout.Spacing
 my_terminal = "urxvt"
 term = \s -> spawn $ my_terminal++" -e "++s
 
-myLayout = avoidStruts(tiled ||| Mirror tiled ||| noBorders Full)
+myLayout = avoidStruts(noBorders Full ||| tiled Mirror tiled |||)
 	where
 		
 		-- default tiling algorithm partitions the screen into two panes  
@@ -34,7 +34,7 @@ main = do
           modMask = mod4Mask
         , terminal = my_terminal
         , layoutHook =  myLayout 
-        , XMonad.borderWidth = 1 
+        , XMonad.borderWidth = 3 
         , XMonad.normalBorderColor = "black"
         , XMonad.focusedBorderColor = "#1793d1"
         }
