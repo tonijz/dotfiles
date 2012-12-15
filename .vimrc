@@ -1,10 +1,28 @@
+set nocompatible               " be iMproved
+filetype off 
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'msanders/snipmate.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+
+filetype plugin indent on
+
 set encoding=utf-8
 set fileencoding=utf-8
 
-colorscheme zenburn
-set guifont=Monaco\ 10
+colorscheme wombat 
+set guifont=Monaco\ 9 
 
 syntax on
+set cursorcolumn              " set cursor column
+set cursorline                " show current line
 set nowrap                    " set nowrap
 set ruler                     " show the line number on the bar
 set autoread                  " watch for file changes
@@ -16,7 +34,7 @@ set showcmd
 set nocompatible              " vim, not vi
 set autoindent smartindent    " auto/smart indent
 set smarttab                  " tab and backspace are smart
-set guioptions-=T             "remove toolbar
+set guioptions=               " remove gui options 
 
 " Set tabs at 4 spaces
 set tabstop=4
@@ -37,20 +55,20 @@ filetype on                   " Enable filetype detection
 filetype indent on            " Enable filetype-specific indenting
 filetype plugin indent on
 
+"highlight NonText guifg=gray
+"highlight SpecialKey guifg=#7D7D7D
+
 set listchars=tab:\|\
-highlight SpecialKey ctermfg=grey
+highlight SpecialKey ctermfg=7 guifg=#4C4947
 set list!
 
+highlight CursorLine term=underline  guibg=#333333  cterm=underline
+highlight CursorColumn term=underline  guibg=#333333  cterm=underline
+
 "set columns=80
-"set colorcolumn=+1 ctermbg=7 " 80 columns: highlight column after 'textwidth', a red line.
+"set colorcolumn=+1 " 80 columns: highlight column after 'textwidth', a red line.
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
-
-
-" clojure
-let vimclojure#HighlightBuiltins
-"let vimclojure#ParenRainbow
-"let vimclojure#FuzzyIndent = 1
 
 " toggle list mode
 nmap <LocalLeader>tl :set list!<cr>
