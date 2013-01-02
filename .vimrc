@@ -11,6 +11,9 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'klen/python-mode'
+Bundle 'https://github.com/aaronbieber/quicktask.git'
+Bundle 'chreekat/vim-paren-crosshairs'
 
 filetype plugin indent on
 
