@@ -7,20 +7,22 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
-Bundle 'msanders/snipmate.vim'
+"Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'klen/python-mode'
 Bundle 'https://github.com/aaronbieber/quicktask.git'
 Bundle 'chreekat/vim-paren-crosshairs'
+Bundle 'https://github.com/derekwyatt/vim-scala.git'
+Bundle 'https://github.com/Lokaltog/powerline.git'
 
 filetype plugin indent on
 
 set encoding=utf-8
 set fileencoding=utf-8
 
-colorscheme wombat 
+colorscheme wombat256mod
 set guifont=Monaco\ 9 
 
 syntax on
@@ -60,6 +62,9 @@ filetype plugin indent on
 
 "highlight NonText guifg=gray
 "highlight SpecialKey guifg=#7D7D7D
+
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set fillchars+=stl:\ ,stlnc:\
 
 set listchars=tab:\|\
 highlight SpecialKey ctermfg=7 guifg=#4C4947
