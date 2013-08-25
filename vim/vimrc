@@ -1,0 +1,125 @@
+set nocompatible " be iMproved
+filetype off 
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'msanders/snipmate.vim'
+Bundle 'stephpy/vim-php-cs-fixer'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'klen/python-mode'
+Bundle 'https://github.com/aaronbieber/quicktask.git'
+Bundle 'chreekat/vim-paren-crosshairs'
+Bundle 'https://github.com/derekwyatt/vim-scala.git'
+Bundle 'https://github.com/Lokaltog/powerline.git'
+Bundle 'https://github.com/tpope/vim-fireplace.git'
+Bundle 'https://github.com/tpope/vim-classpath.git'
+Bundle 'https://github.com/guns/vim-clojure-static.git'
+Bundle 'markeganfuller/vim-puppet'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'gorodinskiy/vim-coloresque'
+
+filetype plugin indent on
+
+let g:Powerline_symbols = 'fancy'
+let g:NERDTreeWinPos = "right"
+
+set encoding=utf-8
+set fileencoding=utf-8
+
+colorscheme kolor
+set guifont=Inconsolata\ Medium\ 11 
+
+syntax on
+set cursorcolumn              " set cursor column
+set cursorline                " show current line
+set nowrap                    " set nowrap
+set ruler                     " show the line number on the bar
+set autoread                  " watch for file changes
+set number                    " line numbers
+set hidden
+set noautowrite               " don't automagically write on :next
+set showmode
+set showcmd
+set nocompatible              " vim, not vi
+set autoindent smartindent    " auto/smart indent
+set smarttab                  " tab and backspace are smart
+set guioptions=               " remove gui options 
+
+" Set tabs at 4 spaces
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+"set scrolloff=5               " keep at least 5 lines above/below
+"set expandtab
+set linebreak
+set cmdheight=2               " command line two lines high
+set undolevels=1000           " 1000 undos
+set noerrorbells              " No error bells please
+
+set hlsearch                  " highlight searchs
+set ignorecase                " Do case insensitive matching
+set smartcase                 " except when using capital letters
+
+filetype on                   " Enable filetype detection
+filetype indent on            " Enable filetype-specific indenting
+filetype plugin indent on
+
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set fillchars+=stl:\ ,stlnc:\
+
+if has("gui_running")
+    set listchars=tab:\|\
+    highlight SpecialKey ctermfg=7 guifg=#4C4947
+    set list!
+
+    highlight CursorLine term=underline  guibg=#333333  cterm=underline
+    highlight CursorColumn term=underline  guibg=#333333  cterm=underline
+
+    " 80 columns: highlight column after 'textwidth', a red line.
+    set columns=80
+    set colorcolumn=+1 
+endif
+
+" toggle list mode
+nmap <LocalLeader>tl :set list!<cr>
+" toggle paste mode
+nmap <LocalLeader>pp :set paste!<cr>
+
+" disabling arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+" Disabling help
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" paste mode
+set nopaste " Start in normal (non-paste) mode
+set pastetoggle=<F2>
+nnoremap <F2> :set invpaste paste?<CR>
+
+" setting backup dir
+set backupdir=~/tmp
+
+" PythonMode don't place error signs
+let g:pymode_lint_signs = 0
+
+" Set snipmate author name
+let snips_author='Tonijs G. <tonijs@tonijs.com>'
