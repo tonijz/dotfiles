@@ -1,1 +1,153 @@
-/Users/tonijs/.vimrc
+set encoding=utf-8
+
+set nocompatible " be iMproved
+filetype off 
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'fatih/vim-go'
+Bundle 'gmarik/vundle'
+Bundle 'groenewege/vim-less'
+Bundle 'scrooloose/nerdtree'
+Bundle 'msanders/snipmate.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'klen/python-mode'
+Bundle 'chreekat/vim-paren-crosshairs'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-classpath'
+Bundle 'guns/vim-clojure-static'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'stephpy/vim-php-cs-fixer'
+Bundle 'airblade/vim-gitgutter'
+
+filetype plugin indent on
+
+" let g:Powerline_symbols = 'fancy'
+let g:NERDTreeWinPos = "right"
+let g:airline_powerline_fonts = 1
+
+set encoding=utf-8
+set fileencoding=utf-8
+
+syntax enable
+colorscheme kolor
+let g:molokai_original = 1
+set background=dark
+set guifont=Inconsolata\ for\ Powerline:h13 
+
+"syntax on
+set cursorcolumn              " set cursor column
+set cursorline                " show current line
+set nowrap                    " set nowrap
+set ruler                     " show the line number on the bar
+set autoread                  " watch for file changes
+set number                    " line numbers
+set hidden
+set noautowrite               " don't automagically write on :next
+set showmode
+set showcmd
+set nocompatible              " vim, not vi
+set autoindent smartindent    " auto/smart indent
+set smarttab                  " tab and backspace are smart
+set guioptions=               " remove gui options 
+set guioptions+=e
+
+set linebreak
+set cmdheight=2               " command line two lines high
+set undolevels=1000           " 1000 undos
+set noerrorbells              " No error bells please
+
+set hlsearch                  " highlight searchs
+set ignorecase                " Do case insensitive matching
+set smartcase                 " except when using capital letters
+
+filetype on                   " Enable filetype detection
+filetype indent on            " Enable filetype-specific indenting
+filetype plugin indent on
+
+" Set tabs at 4 spaces
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" allow toggling between local and default mode
+function TabToggle()
+    if &expandtab
+        set shiftwidth=4
+        set softtabstop=4
+        set noexpandtab
+        echo "set indent to tabs"
+    else
+        set shiftwidth=4
+        set softtabstop=4
+        set expandtab
+        echo "set indent to spaces"
+    endif
+endfunction
+
+nmap <F9> mz:execute TabToggle()<CR>'z
+
+
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set fillchars+=stl:\ ,stlnc:\
+
+if has("gui_running")
+    set listchars=tab:\|\
+    highlight SpecialKey ctermfg=7 guifg=#363636 guibg=#363636
+    set list!
+
+    highlight CursorLine term=underline guibg=#333333  cterm=underline
+    highlight CursorColumn term=underline guibg=#333333  cterm=underline
+
+    " 80 columns: highlight column after 'textwidth', a red line.
+    set columns=80
+    set colorcolumn=+1 
+endif
+
+" toggle list mode
+nmap <LocalLeader>tl :set list!<cr>
+
+" toggle paste mode
+nmap <LocalLeader>pp :set paste!<cr>
+
+" disabling arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+" Disabling help
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" paste mode
+set nopaste " Start in normal (non-paste) mode
+set pastetoggle=<F2>
+nnoremap <F2> :set invpaste paste?<CR>
+
+" allow to save read-only files
+cnoremap sudow w !sudo tee % >/dev/null
+
+" setting backup dir
+set backupdir=~/tmp
+
+" PythonMode don't place error signs
+let g:pymode_lint_signs = 0
+let g:pymode_doc = 0
+
+" Set snipmate author name
+let snips_author='Tonijs G. <tonijs@tonijs.com>'
