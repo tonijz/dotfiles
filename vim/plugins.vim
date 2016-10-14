@@ -19,11 +19,16 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'nvie/vim-flake8'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'chreekat/vim-paren-crosshairs'
+
+" airline
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 Plugin 'tpope/vim-classpath'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'airblade/vim-gitgutter'
 
+Plugin 'stephpy/vim-php-cs-fixer'
 Plugin 'terryma/vim-multiple-cursors'
 
 
