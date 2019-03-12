@@ -37,5 +37,5 @@ Plugin 'jwalton512/vim-blade'
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 
-call vundle#end()                            " required
-filetype plugin indent on                    " required
+call vundle#end()          " required
+filetype plugin indent on  " required

@@ -68,7 +68,6 @@ endif
 " use jk for esc
 inoremap jk <ESC>
 
-
 " toggle list mode
 nmap <LocalLeader>tl :set list!<cr>
 
@@ -172,7 +171,6 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 let g:ctrlp_custom_ignore = 'DS_Store\|git'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
 
-
 "------------Split-management------------"
 set splitbelow
 set splitright
@@ -182,9 +180,6 @@ nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
-
-
-
 "------------Auto-Commands------------"
 
 " auto source .vimrc on save
@@ -193,20 +188,7 @@ augroup autosourcing
     autocmd BufWritePost .vimrc source %
 augroup END
 
-
-
-
-
 "------------Search------------"
 
 set hlsearch                  " highlight searches
 set incsearch                 " incremental search
-
-
-"------------Laravel Specific------------"
-
-nmap <Leader>lr :e routes/api.php<cr>
-nmap <Leader>lm :!php artisan make:
-nmap <Leader>lf :CtrlP<cr>app/
-
-
