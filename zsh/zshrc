@@ -45,22 +45,12 @@ ZSH_THEME="af-magic"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow vagrant brew lein fabric grails docker composer)
+plugins=(git git-flow brew lein docker composer)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:~/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
@@ -75,7 +65,3 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:~/.composer/vendor/bin
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-
-function homestead() {
-    ( cd ~/Homestead && vagrant $* )
-}
