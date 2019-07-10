@@ -1,0 +1,1 @@
+/Users/tonijs/.config/nvim/init.vim
